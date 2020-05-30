@@ -7,6 +7,16 @@
 * Jannik Schmied (s78712)
 
 
-##### Todo:
+##### Umsetzung Anforderungen
 
-* alles
+* 1 - ja
+* 2 - nein
+* 3 - nein
+* 4 - nein
+* 5 - nein 
+* 6 - nein
+* 6.1 - nein
+* 7 - nein
+* 8 - nein
+* 9 - nein
+
