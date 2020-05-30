@@ -1,0 +1,83 @@
+/*
+ *
+ *      Tags
+ *
+ */
+
+html, body
+{
+    height: 100%;
+    padding: 0;
+    overflow: hidden;
+    margin: 0;
+}
+
+
+
+/*
+ *
+ *      Id's
+ *
+ */
+
+#content {
+    height: 100%;
+    display: flex;
+}
+#left {
+    flex: 50%;
+    background: red;
+    height: 100%;
+    overflow: auto;
+    box-sizing: border-box;
+    padding: 0.4em;
+}
+#right {
+    flex: 50%;
+    background: blue;
+    height: 100%;
+    overflow: auto;
+    box-sizing: border-box;
+    padding: 0.4em;
+}
+
+
+/*
+ *
+ *      Classes
+ *
+ */
+
+
+/***     Main       ***/
+
+*
+{
+    box-sizing: border-box;
+}
+
+.hide
+{
+    visibility: hidden;
+}
+
+.bg-y
+{
+    background-color: yellow;
+}
+
+
+/***     Footer     ***/
+
+.footer
+{
+    height: 5%;
+    width: 100%;
+
+    background-color: rgba(0, 0, 0, 0.25);
+
+    position: fixed;
+    left: 0;
+    bottom: 0;
+
+}

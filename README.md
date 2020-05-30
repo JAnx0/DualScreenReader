@@ -5,3 +5,8 @@
 
 * Lionel Burg (s78702)
 * Jannik Schmied (s78712)
+
+
+##### Todo:
+
+* alles
