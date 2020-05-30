@@ -110,10 +110,15 @@ input[type="file"] {
 
 .files
 {
-    background-color: rgba(0, 0, 0, 0.75);
+    margin-top: 1%;
     margin-left: 2%;
     margin-right: 2%;
-    width: auto;
+}
+
+.files-bar
+{
+    background-color: rgba(0, 0, 0, 0.5);
+    margin-right: 10%;
 }
 
 .custom-file-upload {
@@ -121,7 +126,10 @@ input[type="file"] {
     display: inline-block;
     padding: 1% 2%;
     cursor: pointer;
+}
 
-    margin-top: auto;
-    margin-bottom: auto;
+.footer-image
+{
+    float: right;
+    height: 50%;
 }
