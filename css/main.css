@@ -26,7 +26,7 @@ html, body
 }
 #left {
     flex: 50%;
-    background: red;
+    background: white;
     height: 100%;
     overflow: auto;
     box-sizing: border-box;
@@ -34,7 +34,7 @@ html, body
 }
 #right {
     flex: 50%;
-    background: blue;
+    background: yellow;
     height: 100%;
     overflow: auto;
     box-sizing: border-box;
