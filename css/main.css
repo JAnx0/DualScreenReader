@@ -13,7 +13,9 @@ html, body
     font-family: "Courier New", serif;
 }
 
-
+input[type="file"] {
+    display: none;
+}
 
 /*
  *
@@ -93,12 +95,33 @@ html, body
 .footer
 {
     height: 5%;
-    width: 100%;
+    width: 50%;
+
+    padding: 0;
+    margin: 0;
 
     background-color: rgba(0, 0, 0, 0.25);
 
     position: fixed;
+
     left: 0;
     bottom: 0;
+}
 
+.files
+{
+    background-color: rgba(0, 0, 0, 0.75);
+    margin-left: 2%;
+    margin-right: 2%;
+    width: auto;
+}
+
+.custom-file-upload {
+    background-color: coral;
+    display: inline-block;
+    padding: 1% 2%;
+    cursor: pointer;
+
+    margin-top: auto;
+    margin-bottom: auto;
 }
