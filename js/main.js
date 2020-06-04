@@ -25,3 +25,27 @@ const thick = () => {
         line.style.height = '3px';
     }
 }
+
+const swapColors = () => {
+    let left = document.getElementById('left');
+    let right = document.getElementById('right');
+
+    if (right.classList.contains('yellow'))
+    {
+        right.classList.remove('yellow');
+        right.style.backgroundColor = 'white';
+        left.classList.add('yellow');
+        left.style.backgroundColor = 'yellow';
+    }
+    else
+    {
+        left.classList.remove('yellow');
+        left.style.backgroundColor = 'white';
+        right.classList.add('yellow');
+        right.style.backgroundColor = 'yellow';
+    }
+}
+
+const serverAdress = () => {
+    let server = prompt('Bitte Server-URL eingeben:', 'http://idefix.informatik.htw-dresden.de/bibo/');
+}
