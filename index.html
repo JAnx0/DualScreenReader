@@ -94,33 +94,38 @@
             <div id="hamburger" class="dropup">
                 <button class="dropbtn">☰</button>
                 <div class="dropup-content">
-                    <a href="#" onclick="hide()">Hilfslinie</a>
-                    <a href="#" onclick="thick()">Hilfsliniendicke</a>
-                    <a href="#" onclick="swapColors()">Fensterfarbtausch</a>
-                    <a href="#" onclick="serverAdress()">Serveradresse</a>
+                    <a onclick="hide()">Hilfslinie</a>
+                    <a onclick="thick()">Hilfsliniendicke</a>
+                    <a onclick="swapColors()">Fensterfarbtausch</a>
+                    <a onclick="serverAdress()">Serveradresse</a>
                     <hr>
-                    <a href="#">Zurücksetzen</a>
+                    <a>Zurücksetzen</a>
                 </div>
             </div>
             <script src="js/main.js"></script>
         </div>
 
         <div class="files">
-            <div class="files-bar">
-                <label for="file-upload-left" class="custom-file-upload">
-                    Durchsuchen...
-                </label>
-                <input id="file-upload-left" type="file"/>
+            <div id="left-bar">
+                <div class="files-bar">
+                    <label for="file-upload-left" class="custom-file-upload">
+                        Durchsuchen...
+                    </label>
+                    <input id="file-upload-left" type="file"/>
+                </div>
+                <img src="img/download.png" class="footer-image" alt="download">
             </div>
-            <img src="img/download.png" class="footer-image" alt="download">
 
-            <div class="files-bar">
-                <label for="file-upload-right" class="custom-file-upload">
-                    Durchsuchen...
-                </label>
-                <input id="file-upload-right" type="file"/>
+            <div id="right-bar">
+                <div class="files-bar">
+                    <label for="file-upload-right" class="custom-file-upload">
+                        Durchsuchen...
+                    </label>
+                    <input id="file-upload-right" type="file"/>
+                </div>
+                <img src="img/download.png" class="footer-image" alt="download">
             </div>
-            <img src="img/download.png" class="footer-image" alt="download">
+
         </div>
     </div>
 </body>
