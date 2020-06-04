@@ -49,3 +49,24 @@ const swapColors = () => {
 const serverAdress = () => {
     let server = prompt('Bitte Server-URL eingeben:', 'http://idefix.informatik.htw-dresden.de/bibo/');
 }
+
+const reset = () => {
+    window.localStorage.clear();
+    location.reload();
+}
+
+document.getElementById('hamburger').addEventListener('mouseover', function () {
+    let line = document.getElementById('line');
+
+    if (!line.classList.contains('hide')) {
+        line.classList.add('hide');
+    }
+})
+
+document.getElementById('hamburger').addEventListener('mouseout', function () {
+    let line = document.getElementById('line');
+
+    if (line.classList.contains('hide')) {
+        line.classList.remove('hide');
+    }
+})
