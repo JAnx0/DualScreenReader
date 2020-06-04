@@ -56,6 +56,8 @@ input[type="file"] {
     width: 100%;
 }
 
+
+
 #lineheader
 {
     cursor: move;
@@ -65,8 +67,16 @@ input[type="file"] {
 
     background-color: rgba(255, 127, 80, 1);
 
+    overflow: hidden;
+
     width: 100%;
     height: 3px;
+}
+
+#hamburger
+{
+    display: inline;
+    bottom: 0;
 }
 
 
@@ -89,13 +99,15 @@ input[type="file"] {
     visibility: hidden;
 }
 
+.thick {}
+
 
 /***     Footer     ***/
 
 .footer
 {
     height: 5%;
-    width: 50%;
+    width: 100%;
 
     padding: 0;
     margin: 0;
@@ -110,15 +122,14 @@ input[type="file"] {
 
 .files
 {
-    margin-top: 1%;
-    margin-left: 2%;
-    margin-right: 2%;
+    display: flex;
+    padding: 1%;
 }
 
 .files-bar
 {
     background-color: rgba(0, 0, 0, 0.5);
-    margin-right: 10%;
+    flex: 30%;
 }
 
 .custom-file-upload {
@@ -131,5 +142,45 @@ input[type="file"] {
 .footer-image
 {
     float: right;
-    height: 50%;
+    height: auto;
+    max-width: 1%;
+    cursor: pointer;
+}
+
+.sidemenu
+{
+    z-index: 100;
+    position: fixed;
+    display: inline;
+}
+
+.dropup {
+    position: relative;
+    display: inline-block;
+}
+
+.dropup-content {
+    display: none;
+    position: absolute;
+    background-color: rgba(0,0,0,0.75);
+    min-width: 160px;
+    z-index: 1;
+    bottom: 5%;
+}
+
+.dropup-content a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropup-content a:hover {background-color: #ccc}
+
+.dropup:hover .dropup-content {
+    display: block;
+}
+
+.dropup:hover .dropbtn {
+    background-color: #2980B9;
 }

@@ -84,19 +84,44 @@
             </p>
 
 
-            <div class="footer" style="float: right;">
-                <div class="files">
-                    <div class="files-bar">
-                        <label for="file-upload" class="custom-file-upload">
-                            Durchsuchen...
-                        </label>
-                        <input id="file-upload" type="file"/>
-                    </div>
-                    <img src="img/download.png" class="footer-image" alt="download">
-                </div>
-            </div>
+
         </div>
 
+    </div>
+
+    <div class="footer">
+        <div class="sidemenu">
+            <div id="hamburger" class="dropup">
+                <button class="dropbtn">☰</button>
+                <div class="dropup-content">
+                    <a href="#" onclick="hide()">Hilfslinie</a>
+                    <a href="#" onclick="thick()">Hilfsliniendicke</a>
+                    <a href="#">Fensterfarbtausch</a>
+                    <a href="#">Serveradresse</a>
+                    <hr>
+                    <a href="#">Zurücksetzen</a>
+                </div>
+            </div>
+            <script src="js/main.js"></script>
+        </div>
+
+        <div class="files">
+            <div class="files-bar">
+                <label for="file-upload-left" class="custom-file-upload">
+                    Durchsuchen...
+                </label>
+                <input id="file-upload-left" type="file"/>
+            </div>
+            <img src="img/download.png" class="footer-image" alt="download">
+
+            <div class="files-bar">
+                <label for="file-upload-right" class="custom-file-upload">
+                    Durchsuchen...
+                </label>
+                <input id="file-upload-right" type="file"/>
+            </div>
+            <img src="img/download.png" class="footer-image" alt="download">
+        </div>
     </div>
 </body>
 </html>
