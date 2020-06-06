@@ -32,7 +32,7 @@
     <div id="content">
 
         <div id="left">
-            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+            <p id="leftOutput">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
 
                 Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
 
@@ -60,7 +60,7 @@
         </div>
 
         <div id="right" class="yellow">
-            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+            <p id="rightOutput">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
 
                 Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
 
@@ -111,7 +111,30 @@
                     <label for="file-upload-left" class="custom-file-upload">
                         Durchsuchen...
                     </label>
-                    <input id="file-upload-left" type="file"/>
+                    <input id="file-upload-left" type="file" onchange="handleFileSelectL(event)">
+					<label id="file_name_left">
+						Dateiname
+					</label>
+						<script>
+							function handleFileSelectL(evt) {
+							var fileInput = document.getElementById("file-upload-left");
+							var files = fileInput.files;
+
+							for (var i = 0; i < files.length; i++) {
+								document.getElementById('file_name_left').innerHTML = files[i].name;
+							}
+							
+							var fileReader = new FileReader();
+							  
+							fileReader.onload = function(progressEvent) {
+								var fileContent = fileReader.result;
+								document.getElementById("leftOutput").innerHTML= fileContent;
+							}
+							
+							fileReader.readAsText(files[0]);
+							document.getElementById('file-upload-left').addEventListener('change', handleFileSelect, false);
+							}
+						</script>
                 </div>
                 <img src="img/download.png" class="footer-image" alt="download">
             </div>
@@ -121,7 +144,30 @@
                     <label for="file-upload-right" class="custom-file-upload">
                         Durchsuchen...
                     </label>
-                    <input id="file-upload-right" type="file"/>
+                    <input id="file-upload-right" type="file" onchange="handleFileSelectR(event)">
+					<label id="file_name_right">
+						Dateiname
+					</label>
+					<script>
+							function handleFileSelectR(evt) {
+							var fileInput = document.getElementById("file-upload-right");
+							var files = fileInput.files;
+
+							for (var i = 0; i < files.length; i++) {
+								document.getElementById('file_name_right').innerHTML = files[i].name;
+							}
+							
+							var fileReader = new FileReader();
+							  
+							fileReader.onload = function(progressEvent) {
+								var fileContent = fileReader.result;
+								document.getElementById("rightOutput").innerHTML= fileContent;
+							}
+							
+							fileReader.readAsText(files[0]);
+							document.getElementById('file-upload-right').addEventListener('change', handleFileSelect, false);
+							}
+						</script>
                 </div>
                 <img src="img/download.png" class="footer-image" alt="download">
             </div>
