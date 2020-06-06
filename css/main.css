@@ -142,7 +142,6 @@ input[type="file"] {
 .files-bar
 {
     background-color: rgba(0, 0, 0, 0.5);
-    flex: 50%;
 }
 
 .custom-file-upload
@@ -158,6 +157,7 @@ input[type="file"] {
     float: right;
     height: auto;
     max-width: 1%;
+    bottom: 0;
     cursor: pointer;
 }
 
