@@ -23,4 +23,10 @@ window.onload = function ()
         document.getElementById('file_name_right').innerHTML = localStorage.getItem("textRightName"); 
     if(localStorage.getItem("textLeftName")!=null)
         document.getElementById('file_name_left').innerHTML = localStorage.getItem("textLeftName");
+    // Set background colors
+    if(localStorage.getItem("colorRight")!=null)
+        document.getElementById('right').style.backgroundColor = localStorage.getItem("colorRight"); 
+    if(localStorage.getItem("colorLeft")!=null)
+        document.getElementById('left').style.backgroundColor = localStorage.getItem("colorLeft");
+    
 }

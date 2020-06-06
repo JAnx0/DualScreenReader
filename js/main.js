@@ -40,6 +40,9 @@ const swapColors = () => {
         right.style.backgroundColor = 'white';
         left.classList.add('yellow');
         left.style.backgroundColor = 'yellow';
+        localStorage.setItem("colorRight", "white");
+        localStorage.setItem("colorLeft", "yellow");
+
     }
     else
     {
@@ -47,6 +50,8 @@ const swapColors = () => {
         left.style.backgroundColor = 'white';
         right.classList.add('yellow');
         right.style.backgroundColor = 'yellow';
+        localStorage.setItem("colorLeft", "white");
+        localStorage.setItem("colorRight", "yellow");
     }
 }
 
