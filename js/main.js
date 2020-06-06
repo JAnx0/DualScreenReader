@@ -55,18 +55,33 @@ const reset = () => {
     location.reload();
 }
 
-document.getElementById('hamburger').addEventListener('mouseover', function () {
+const showMenu = () => {
+    menu = document.getElementById('ddct');
+
+    if (menu.style.display === 'none')
+    {
+        menu.style.display = 'block';
+        hideLine();
+    }
+    else
+    {
+        menu.style.display = 'none';
+        showLine();
+    }
+}
+
+const hideLine = () => {
     let line = document.getElementById('line');
 
     if (!line.classList.contains('hide')) {
         line.classList.add('hide');
     }
-})
+}
 
-document.getElementById('hamburger').addEventListener('mouseout', function () {
+const showLine = () => {
     let line = document.getElementById('line');
 
     if (line.classList.contains('hide')) {
         line.classList.remove('hide');
     }
-})
+}
