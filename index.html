@@ -117,22 +117,22 @@
 					</label>
 						<script>
 							function handleFileSelectL(evt) {
-							var fileInput = document.getElementById("file-upload-left");
-							var files = fileInput.files;
+                                var fileInput = document.getElementById("file-upload-left");
+                                var files = fileInput.files;
 
-							for (var i = 0; i < files.length; i++) {
-								document.getElementById('file_name_left').innerHTML = files[i].name;
-							}
-							
-							var fileReader = new FileReader();
-							  
-							fileReader.onload = function(progressEvent) {
-								var fileContent = fileReader.result;
-								document.getElementById("leftOutput").innerHTML= fileContent;
-							}
-							
-							fileReader.readAsText(files[0]);
-							document.getElementById('file-upload-left').addEventListener('change', handleFileSelect, false);
+                                for (var i = 0; i < files.length; i++) {
+                                    document.getElementById('file_name_left').innerHTML = files[i].name;
+                                }
+
+                                var fileReader = new FileReader();
+
+                                fileReader.onload = function(progressEvent) {
+                                    var fileContent = fileReader.result;
+                                    document.getElementById("leftOutput").innerHTML= fileContent;
+                                }
+
+                                fileReader.readAsText(files[0]);
+                                document.getElementById('file-upload-left').addEventListener('change', handleFileSelect, false);
 							}
 						</script>
                 </div>
@@ -150,22 +150,22 @@
 					</label>
 					<script>
 							function handleFileSelectR(evt) {
-							var fileInput = document.getElementById("file-upload-right");
-							var files = fileInput.files;
+                                var fileInput = document.getElementById("file-upload-right");
+                                var files = fileInput.files;
 
-							for (var i = 0; i < files.length; i++) {
-								document.getElementById('file_name_right').innerHTML = files[i].name;
-							}
-							
-							var fileReader = new FileReader();
-							  
-							fileReader.onload = function(progressEvent) {
-								var fileContent = fileReader.result;
-								document.getElementById("rightOutput").innerHTML= fileContent;
-							}
-							
-							fileReader.readAsText(files[0]);
-							document.getElementById('file-upload-right').addEventListener('change', handleFileSelect, false);
+                                for (var i = 0; i < files.length; i++) {
+                                    document.getElementById('file_name_right').innerHTML = files[i].name;
+                                }
+
+                                var fileReader = new FileReader();
+
+                                fileReader.onload = function(progressEvent) {
+                                    var fileContent = fileReader.result;
+                                    document.getElementById("rightOutput").innerHTML= fileContent;
+                                }
+
+                                fileReader.readAsText(files[0]);
+                                document.getElementById('file-upload-right').addEventListener('change', handleFileSelect, false);
 							}
 						</script>
                 </div>

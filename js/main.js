@@ -4,10 +4,12 @@ const hide = () => {
     if (!line.classList.contains('hide'))
     {
         line.classList.add('hide');
+        localStorage.setItem("line-visibility", "hidden");
     }
     else
     {
         line.classList.remove('hide');
+        localStorage.setItem("line-visibility", "visible");
     }
 }
 
@@ -56,18 +58,36 @@ const reset = () => {
 }
 
 const showMenu = () => {
-    menu = document.getElementById('ddct');
+    let menu = document.getElementById('ddct');
+    let lineVisibility = localStorage.getItem("line-visibility");
 
-    if (menu.style.display === 'none')
+    if (lineVisibility === "hidden")
     {
-        menu.style.display = 'block';
-        hideLine();
+        if (menu.style.display === 'none')
+        {
+            menu.style.display = 'block';
+        }
+        else
+        {
+            menu.style.display = 'none';
+        }
     }
     else
     {
-        menu.style.display = 'none';
-        showLine();
+        if (menu.style.display === 'none')
+        {
+            menu.style.display = 'block';
+            hideLine();
+        }
+        else
+        {
+            menu.style.display = 'none';
+            showLine();
+        }
     }
+
+
+
 }
 
 const hideLine = () => {
