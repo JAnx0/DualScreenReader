@@ -33,7 +33,10 @@ function moveLine(elmnt)
         y1 = y2 - e.clientY
         y2 = e.clientY
 
-        elmnt.style.top = (elmnt.offsetTop - y1) + "px";
+        let pos = elmnt.offsetTop - y1;
+
+        elmnt.style.top = (pos) + "px";
+        localStorage.setItem("line-position", pos.toString() + "px");
     }
 
     function closeDragElement()

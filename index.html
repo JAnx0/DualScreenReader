@@ -17,6 +17,7 @@
 
     <!-- scripts -->
     <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript" src="js/handler.js"></script>
 
 </head>
 <body>
@@ -113,26 +114,26 @@
                     </label>
                     <input id="file-upload-left" type="file" onchange="handleFileSelectL(event)">
 					<label id="file_name_left">
-						Dateiname
+                        Keine Datei geladen...
 					</label>
 						<script>
 							function handleFileSelectL(evt) {
-                                var fileInput = document.getElementById("file-upload-left");
-                                var files = fileInput.files;
+                                const fileInput = document.getElementById("file-upload-left");
+                                const files = fileInput.files;
 
-                                for (var i = 0; i < files.length; i++) {
+                                for (let i = 0; i < files.length; i++) {
                                     document.getElementById('file_name_left').innerHTML = files[i].name;
                                 }
 
-                                var fileReader = new FileReader();
+                                const fileReader = new FileReader();
 
                                 fileReader.onload = function(progressEvent) {
-                                    var fileContent = fileReader.result;
+                                    const fileContent = fileReader.result;
                                     document.getElementById("leftOutput").innerHTML= fileContent;
                                 }
 
                                 fileReader.readAsText(files[0]);
-                                document.getElementById('file-upload-left').addEventListener('change', handleFileSelect, false);
+                                document.getElementById('file-upload-left').addEventListener('change', handleFileSelectL, false);
 							}
 						</script>
                 </div>
@@ -146,33 +147,35 @@
                     </label>
                     <input id="file-upload-right" type="file" onchange="handleFileSelectR(event)">
 					<label id="file_name_right">
-						Dateiname
+						Keine Datei geladen...
 					</label>
 					<script>
 							function handleFileSelectR(evt) {
-                                var fileInput = document.getElementById("file-upload-right");
-                                var files = fileInput.files;
+                                const fileInput = document.getElementById("file-upload-right");
+                                const files = fileInput.files;
 
-                                for (var i = 0; i < files.length; i++) {
+                                for (let i = 0; i < files.length; i++) {
                                     document.getElementById('file_name_right').innerHTML = files[i].name;
                                 }
 
-                                var fileReader = new FileReader();
+                                const fileReader = new FileReader();
 
                                 fileReader.onload = function(progressEvent) {
-                                    var fileContent = fileReader.result;
+                                    const fileContent = fileReader.result;
                                     document.getElementById("rightOutput").innerHTML= fileContent;
                                 }
 
                                 fileReader.readAsText(files[0]);
-                                document.getElementById('file-upload-right').addEventListener('change', handleFileSelect, false);
+                                document.getElementById('file-upload-right').addEventListener('change', handleFileSelectR, false);
 							}
 						</script>
                 </div>
                 <img src="img/download.png" class="footer-image" alt="download">
             </div>
 
+
         </div>
     </div>
+    <script type="text/javascript" src="js/listeners.js"></script>
 </body>
 </html>

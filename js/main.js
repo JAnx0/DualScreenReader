@@ -20,11 +20,13 @@ const thick = () => {
     {
         line.classList.add('thick');
         line.style.height = '5px';
+        localStorage.setItem("line-thickness", "5px");
     }
     else
     {
         line.classList.remove('thick');
         line.style.height = '3px';
+        localStorage.setItem("line-thickness", "3px");
     }
 }
 
