@@ -10,9 +10,17 @@ window.onload = function ()
     document.getElementById('left').scrollTop = Number(localStorage.getItem("scroll-pos-left"));
     document.getElementById('right').scrollTop = Number(localStorage.getItem("scroll-pos-right"));
     // Set texts
-    document.getElementById("rightOutput").innerHTML = localStorage.getItem("textRight");
-    document.getElementById("leftOutput").innerHTML = localStorage.getItem("textLeft");
+    if(localStorage.getItem("textRight")!=null)
+        document.getElementById("rightOutput").innerHTML = localStorage.getItem("textRight");
+    else
+        document.getElementById("rightOutput").innerHTML= "Kein Text lokal gespeichert. Laden Sie eine beliebige .txt Datei über die untenstehende Leiste.";
+    if(localStorage.getItem("textLeft")!=null)
+        document.getElementById("leftOutput").innerHTML = localStorage.getItem("textLeft");
+    else
+        document.getElementById("leftOutput").innerHTML= "Kein Text lokal gespeichert. Laden Sie eine beliebige .txt Datei über die untenstehende Leiste.";
     // Set text names
-    document.getElementById('file_name_right').innerHTML = localStorage.getItem("textRightName");
-    document.getElementById('file_name_left').innerHTML = localStorage.getItem("textLeftName");
+    if(localStorage.getItem("textRightName")!=null)
+        document.getElementById('file_name_right').innerHTML = localStorage.getItem("textRightName"); 
+    if(localStorage.getItem("textLeftName")!=null)
+        document.getElementById('file_name_left').innerHTML = localStorage.getItem("textLeftName");
 }
