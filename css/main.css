@@ -172,6 +172,14 @@ input[type="file"] {
     display: inline-block;
 }
 
+.dropbtn
+{
+    background-color: rgba(0,0,0,0);
+    border: none;
+    font-size: 30px;
+    color: white;
+}
+
 .dropup-content
 {
     display: none;
@@ -181,6 +189,7 @@ input[type="file"] {
     z-index: 1;
     bottom: 35px;
     cursor: pointer;
+    transition: height 1s;
 }
 
 .dropup-content a
@@ -207,5 +216,6 @@ input[type="file"] {
 .dropup:hover .dropbtn
 {
     background-color: #2980B9;
+    border: none;
     cursor: pointer;
 }
