@@ -221,7 +221,7 @@ input[type="file"] {
     background-color: rgba(0,0,0,0.75);
     min-width: 160px;
     z-index: 1;
-    bottom: 35px;
+    bottom: 45px;
     cursor: pointer;
     transition: height 1s;
 }
