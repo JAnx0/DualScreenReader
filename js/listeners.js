@@ -69,20 +69,37 @@ document.getElementById('left-download').addEventListener('click', function () {
             webDiv.style.display = 'none';
         }
     }
-
-
 })
 
 document.getElementById('right-download').addEventListener('click', function () {
     let webDiv = document.getElementById('web-content');
+    let lineVisibility = localStorage.getItem("line-visibility");
 
-    if (webDiv.style.display === 'none')
+    if (lineVisibility === "hidden")
     {
-        webDiv.style.display = 'inline';
-        load(webDiv, 'right', destUrl);
+        if (webDiv.style.display === 'none')
+        {
+            webDiv.style.display = 'inline';
+            load(webDiv, 'right', destUrl);
+        }
+        else
+        {
+            webDiv.style.display = 'none';
+        }
     }
     else
     {
-        webDiv.style.display = 'none';
+        if (webDiv.style.display === 'none')
+        {
+            hideLine();
+            webDiv.style.display = 'inline';
+            load(webDiv, 'right', destUrl);
+
+        }
+        else
+        {
+            showLine();
+            webDiv.style.display = 'none';
+        }
     }
 })
