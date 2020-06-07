@@ -56,18 +56,17 @@
     <div class="footer">
 
         <div class="sidemenu">
-            <div class="dropup">
-                <button id="hamburger" class="dropbtn" onclick="showMenu()">☰</button>
-                <div id="ddct" class="dropup-content">
-                    <a onclick="hide()">Hilfslinie</a>
-                    <a onclick="thick()">Hilfsliniendicke</a>
-                    <a onclick="swapColors()">Fensterfarbtausch</a>
-                    <a onclick="serverAddress()">Serveradresse</a>
-                    <hr>
-                    <a onclick="reset()">Zurücksetzen</a>
-                </div>
+            <div id="mySidebar" class="sidebar">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+                <a onclick="hide()">Hilfslinie</a>
+                <a onclick="thick()">Hilfsliniendicke</a>
+                <a onclick="swapColors()">Fensterfarbtausch</a>
+                <a onclick="serverAddress()">Serveradresse</a>
+                <hr>
+                <a onclick="reset()">Zurücksetzen</a>
             </div>
-            <script src="js/main.js"></script>
+
+            <button class="openbtn" onclick="openNav()">☰</button>
         </div>
 
         <div class="files">

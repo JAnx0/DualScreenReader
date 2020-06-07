@@ -82,33 +82,21 @@ const reset = () => {
     location.reload();
 }
 
-const showMenu = () => {
-    let menu = document.getElementById('ddct');
+function openNav() {
+    document.getElementById("mySidebar").style.width = "300px";
     let lineVisibility = localStorage.getItem("line-visibility");
 
-    if (lineVisibility === "hidden")
+    if (!lineVisibility === "hidden")
     {
-        if (menu.style.display === 'none')
-        {
-            menu.style.display = 'block';
-        }
-        else
-        {
-            menu.style.display = 'none';
-        }
+        hideLine();
     }
-    else
+}
+
+function closeNav() {
+    document.getElementById("mySidebar").style.width = "0";
+    if (!lineVisibility === "hidden")
     {
-        if (menu.style.display === 'none')
-        {
-            menu.style.display = 'block';
-            hideLine();
-        }
-        else
-        {
-            menu.style.display = 'none';
-            showLine();
-        }
+        showLine();
     }
 }
 
