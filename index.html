@@ -18,6 +18,7 @@
     <!-- scripts -->
     <script type="text/javascript" src="js/main.js"></script>
     <script type="text/javascript" src="js/handler.js"></script>
+    <script type="text/javascript" src="js/server.js"></script>
 
 </head>
 <body>
@@ -59,7 +60,7 @@
                     <a onclick="hide()">Hilfslinie</a>
                     <a onclick="thick()">Hilfsliniendicke</a>
                     <a onclick="swapColors()">Fensterfarbtausch</a>
-                    <a onclick="serverAdress()">Serveradresse</a>
+                    <a onclick="serverAddress()">Serveradresse</a>
                     <hr>
                     <a onclick="reset()">Zurücksetzen</a>
                 </div>
@@ -93,12 +94,11 @@
                                 }
 
                                 fileReader.readAsText(files[0]);
-                                // text und dateiname speichern
                                 document.getElementById('file-upload-left').addEventListener('change', handleFileSelectL, false);
 							}
 						</script>
                 </div>
-                <img src="img/download.png" class="footer-image" alt="download">
+                <img src="img/download.png" class="footer-image" alt="download" onclick="load(url)">
             </div>
 
             <div id="right-bar">
@@ -126,12 +126,11 @@
                                 }
 
                                 fileReader.readAsText(files[0]);
-                                // text und dateiname speichern
                                 document.getElementById('file-upload-right').addEventListener('change', handleFileSelectR, false);
 							}
 						</script>
                 </div>
-                <img src="img/download.png" class="footer-image" alt="download">
+                <img src="img/download.png" class="footer-image" alt="download" onclick="load(url)">
             </div>
 
 

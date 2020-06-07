@@ -55,8 +55,20 @@ const swapColors = () => {
     }
 }
 
-const serverAdress = () => {
-    let server = prompt('Bitte Server-URL eingeben:', 'http://idefix.informatik.htw-dresden.de/bibo/');
+const serverAddress = () => {
+    const defaultAddress = 'http://idefix.informatik.htw-dresden.de/bibo/';
+    const localAddress = localStorage.getItem("server-address");
+
+    if (!localAddress)
+    {
+        let serverAddress = prompt('Bitte Server-URL eingeben:', defaultAddress);
+        localStorage.setItem("server-address", serverAddress.toString());
+    }
+    else
+    {
+        let serverAddress = prompt('Bitte Server-URL eingeben:', localAddress);
+        localStorage.setItem("server-address", serverAddress.toString());
+    }
 }
 
 const reset = () => {
