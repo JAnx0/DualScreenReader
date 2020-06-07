@@ -99,7 +99,8 @@ const showLine = () => {
 }
 
 function openNav() {
-    document.getElementById("mySidebar").style.width = "300px";
+    document.getElementById("mySidebar").style.height = "400px";
+    document.getElementById("mySidebar").style.paddingTop = "30px";
     let lineVisibility = localStorage.getItem("line-visibility");
 
     if (!(lineVisibility === 'hidden'))
@@ -109,8 +110,10 @@ function openNav() {
 }
 
 function closeNav() {
-    document.getElementById("mySidebar").style.width = "0";
+    document.getElementById("mySidebar").style.height = "0";
+    document.getElementById("mySidebar").style.paddingTop = "0px";
     let lineVisibility = localStorage.getItem("line-visibility");
+    
 
     if (!(lineVisibility === 'hidden'))
     {
