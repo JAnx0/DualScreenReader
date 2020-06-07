@@ -44,29 +44,29 @@ document.getElementById('left-download').addEventListener('click', function () {
 
     if (lineVisibility === "hidden")
     {
-        if (webDiv.style.display === 'none')
+        if (webDiv.style.height === '0%')
         {
-            webDiv.style.display = 'inline';
+            webDiv.style.height='50%';
             load(webDiv, 'left', destUrl);
         }
         else
         {
-            webDiv.style.display = 'none';
+            webDiv.style.height='0%';
         }
     }
     else
     {
-        if (webDiv.style.display === 'none')
+        if (webDiv.style.height === '0%')
         {
             hideLine();
-            webDiv.style.display = 'inline';
+            webDiv.style.height='50%';
             load(webDiv, 'left', destUrl);
 
         }
         else
         {
             showLine();
-            webDiv.style.display = 'none';
+            webDiv.style.height='0%';
         }
     }
 })
@@ -77,29 +77,29 @@ document.getElementById('right-download').addEventListener('click', function () 
 
     if (lineVisibility === "hidden")
     {
-        if (webDiv.style.display === 'none')
+        if (webDiv.style.height === '0%')
         {
-            webDiv.style.display = 'inline';
+            webDiv.style.height='50%';
             load(webDiv, 'right', destUrl);
         }
         else
         {
-            webDiv.style.display = 'none';
+            webDiv.style.height='0%';
         }
     }
     else
     {
-        if (webDiv.style.display === 'none')
+        if (webDiv.style.height === '0%')
         {
+            webDiv.style.height='50%';
             hideLine();
-            webDiv.style.display = 'inline';
             load(webDiv, 'right', destUrl);
 
         }
         else
         {
             showLine();
-            webDiv.style.display = 'none';
+            webDiv.style.height='0%';
         }
     }
 })
