@@ -143,7 +143,7 @@ const getTxt = (elementId, outputDiv) => {
         if (this.readyState == 4 && this.status == 200)
         {
             document.getElementById(outputDiv + 'Output').innerHTML = this.responseText;
-            document.getElementById('file_name_' + outputDiv).innerText = file;
+            document.getElementById('file_name_' + outputDiv).innerHTML = file;
         }
     };
 
