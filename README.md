@@ -10,13 +10,13 @@
 ##### Umsetzung Anforderungen
 
 * 1 - ja
-* 2 - nein
-* 3 - nein
-* 4 - nein
-* 5 - nein 
-* 6 - nein
-* 6.1 - nein
-* 7 - nein
-* 8 - nein
+* 2 - ja
+* 3 - ja
+* 4 - ja
+* 5 - ja 
+* 6 - ja
+* 6.1 - ja
+* 7 - ja
+* 8 - ja
 * 9 - nein
 

@@ -56,18 +56,24 @@ const swapColors = () => {
 }
 
 const serverAddress = () => {
-    const defaultAddress = 'http://idefix.informatik.htw-dresden.de/bibo/';
-    const localAddress = localStorage.getItem("server-address");
+    let defaultAddress = 'http://idefix.informatik.htw-dresden.de/bibo/';
+    let localAddress = localStorage.getItem("server-address");
 
     if (!localAddress)
     {
         let serverAddress = prompt('Bitte Server-URL eingeben:', defaultAddress);
-        localStorage.setItem("server-address", serverAddress.toString());
+        if (serverAddress[serverAddress.length - 1] === '/')
+            localStorage.setItem("server-address", serverAddress.toString());
+        else
+            localStorage.setItem("server-address", serverAddress.concat('/').toString());
     }
     else
     {
         let serverAddress = prompt('Bitte Server-URL eingeben:', localAddress);
-        localStorage.setItem("server-address", serverAddress.toString());
+        if (serverAddress[serverAddress.length - 1] === '/')
+            localStorage.setItem("server-address", serverAddress.toString());
+        else
+            localStorage.setItem("server-address", serverAddress.concat('/').toString());
     }
 }
 
@@ -104,9 +110,6 @@ const showMenu = () => {
             showLine();
         }
     }
-
-
-
 }
 
 const hideLine = () => {
@@ -123,4 +126,27 @@ const showLine = () => {
     if (line.classList.contains('hide')) {
         line.classList.remove('hide');
     }
+}
+
+const getTxt = (elementId, outputDiv) => {
+    let url = localStorage.getItem("server-address");
+    if (url === null)
+    {
+        url = 'http://idefix.informatik.htw-dresden.de/bibo/';
+    }
+
+    let file = document.getElementById(elementId).innerHTML;
+
+    let xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function()
+    {
+        if (this.readyState == 4 && this.status == 200)
+        {
+            document.getElementById(outputDiv + 'Output').innerHTML = this.responseText;
+            document.getElementById('file_name_' + outputDiv).innerText = file;
+        }
+    };
+
+    xhr.open("GET", url + file, true);
+    xhr.send();
 }

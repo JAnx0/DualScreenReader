@@ -18,19 +18,18 @@
     <!-- scripts -->
     <script type="text/javascript" src="js/main.js"></script>
     <script type="text/javascript" src="js/handler.js"></script>
-    <script type="text/javascript" src="js/server.js"></script>
 
 </head>
 <body>
 
+    <!-- HILFSLINIE -->
     <div id="line">
-        <!-- Include a header DIV with the same name as the draggable DIV, followed by "header" -->
-<!--        <div id="lineheader"><hr></div>-->
         <hr id="lineheader">
     </div>
 
     <script type="text/javascript" src="js/line.js"></script>
 
+    <!-- TEXTE -->
     <div id="content">
 
         <div id="left">
@@ -45,14 +44,17 @@
         <div id="right" class="yellow">
             <p id="rightOutput">
             </p>
-
-
-
         </div>
 
+        <div id="web-content">
+
+        </div>
     </div>
 
+
+    <!-- FOOTER -->
     <div class="footer">
+
         <div class="sidemenu">
             <div class="dropup">
                 <button id="hamburger" class="dropbtn" onclick="showMenu()">☰</button>
@@ -75,11 +77,13 @@
                         Durchsuchen...
                     </label>
                     <input id="file-upload-left" type="file" accept="text/plain" onchange="handleFileSelectL(event)">
-					<label id="file_name_left">
+                    <img src="img/download.png" id="left-download" class="footer-image" alt="download">
+                    <label id="file_name_left">
                         Keine Datei geladen...
 					</label>
 						<script>
-							function handleFileSelectL(evt) {
+							function handleFileSelectL(evt)
+                            {
                                 const fileInput = document.getElementById("file-upload-left");
                                 const files = fileInput.files;
                                 document.getElementById('file_name_left').innerHTML = files[0].name;
@@ -98,7 +102,6 @@
 							}
 						</script>
                 </div>
-                <img src="img/download.png" class="footer-image" alt="download" onclick="load(url)">
             </div>
 
             <div id="right-bar">
@@ -107,11 +110,13 @@
                         Durchsuchen...
                     </label>
                     <input id="file-upload-right" type="file" accept="text/plain" onchange="handleFileSelectR(event)">
-					<label id="file_name_right">
+                    <img src="img/download.png" id="right-download" class="footer-image" alt="download">
+                    <label id="file_name_right">
 						Keine Datei geladen...
 					</label>
 					<script>
-							function handleFileSelectR(evt) {
+							function handleFileSelectR(evt)
+                            {
                                 const fileInput = document.getElementById("file-upload-right");
                                 const files = fileInput.files;
                                 document.getElementById('file_name_right').innerHTML = files[0].name;
@@ -130,10 +135,7 @@
 							}
 						</script>
                 </div>
-                <img src="img/download.png" class="footer-image" alt="download" onclick="load(url)">
             </div>
-
-
         </div>
     </div>
     <script type="text/javascript" src="js/listeners.js"></script>

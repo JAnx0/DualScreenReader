@@ -10,10 +10,6 @@ window.onload = function ()
     document.getElementById('left').scrollTop = Number(localStorage.getItem("scroll-pos-left"));
     document.getElementById('right').scrollTop = Number(localStorage.getItem("scroll-pos-right"));
 
-    // Set server address
-    if (localStorage.getItem("server-address"))
-        var server = localStorage.getItem("server-address");
-
     // Set texts
     if(localStorage.getItem("textRight")!=null)
         document.getElementById("rightOutput").innerHTML = localStorage.getItem("textRight");
