@@ -61,7 +61,7 @@ input[type="file"] {
 #lineheader
 {
     cursor: move;
-    z-index: 10;
+    z-index: 5;
 
     border: none;
 

@@ -82,14 +82,6 @@ const reset = () => {
     location.reload();
 }
 
-function openNav() {
-    document.getElementById("mySidebar").style.width = "300px";
-}
-
-function closeNav() {
-    document.getElementById("mySidebar").style.width = "0";
-}
-
 const hideLine = () => {
     let line = document.getElementById('line');
 
@@ -103,6 +95,26 @@ const showLine = () => {
 
     if (line.classList.contains('hide')) {
         line.classList.remove('hide');
+    }
+}
+
+function openNav() {
+    document.getElementById("mySidebar").style.width = "300px";
+    let lineVisibility = localStorage.getItem("line-visibility");
+
+    if (!(lineVisibility === 'hidden'))
+    {
+        hideLine();
+    }
+}
+
+function closeNav() {
+    document.getElementById("mySidebar").style.width = "0";
+    let lineVisibility = localStorage.getItem("line-visibility");
+
+    if (!(lineVisibility === 'hidden'))
+    {
+        showLine();
     }
 }
 
