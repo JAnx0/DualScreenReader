@@ -13,7 +13,7 @@ const load = (webDiv, dest, url) => {
         {
             let myObj = JSON.parse(this.responseText);
 
-            let output = '<h3 style="float: right; margin-bottom: 2%;" onclick="document.getElementById(\'web-content\').style.display = \'none\'">x</h3><p id="item-0" onclick="getTxt(this.id, \'' + dest + '\')">';
+            let output = '<p id="item-0" onclick="getTxt(this.id, \'' + dest + '\')">';
 
             for (let i in myObj)
             {
@@ -21,11 +21,7 @@ const load = (webDiv, dest, url) => {
             }
 
             output += "</p>";
-            output= output.replace(/\n/g, "<br> ------------------------------ </br>"); // added paragraph highlighting
-            if(dest==='left')
-                localStorage.setItem("textLeft", fileContent); //storing texts locally
-            else
-                localStorage.setItem("textRight", fileContent);
+
             webDiv.innerHTML = output;
         }
     };

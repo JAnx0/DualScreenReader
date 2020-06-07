@@ -84,20 +84,10 @@ const reset = () => {
 
 function openNav() {
     document.getElementById("mySidebar").style.width = "300px";
-    let lineVisibility = localStorage.getItem("line-visibility");
-
-    if (!lineVisibility === "hidden")
-    {
-        hideLine();
-    }
 }
 
 function closeNav() {
     document.getElementById("mySidebar").style.width = "0";
-    if (!lineVisibility === "hidden")
-    {
-        showLine();
-    }
 }
 
 const hideLine = () => {
@@ -130,8 +120,19 @@ const getTxt = (elementId, outputDiv) => {
     {
         if (this.readyState == 4 && this.status == 200)
         {
-            document.getElementById(outputDiv + 'Output').innerHTML = this.responseText;
+            let output= this.responseText.replace(/\n/g, "<br> ------------------------------ </br>"); // added paragraph highlighting
+
+            document.getElementById(outputDiv + 'Output').innerHTML = output;
             document.getElementById('file_name_' + outputDiv).innerHTML = file;
+
+            if(outputDiv==='left') {
+                localStorage.setItem("textLeft", output); //storing texts locally
+                localStorage.setItem("textLeftName", file);
+            }
+            else {
+                localStorage.setItem("textRight", output);
+                localStorage.setItem("textRightName", file);
+            }
         }
     };
 
