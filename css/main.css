@@ -210,6 +210,7 @@ input[type="file"] {
     left: 0;
     background-color: rgba(0,0,0,0.75);
     overflow-x: hidden;
+    overflow-y: hidden ;
     transition: 0.3s;
     padding-top: 0px;
     padding-bottom: 0px;
