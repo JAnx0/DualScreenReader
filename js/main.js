@@ -84,20 +84,10 @@ const reset = () => {
 
 function openNav() {
     document.getElementById("mySidebar").style.width = "300px";
-    let lineVisibility = localStorage.getItem("line-visibility");
-
-    if (!lineVisibility === "hidden")
-    {
-        hideLine();
-    }
 }
 
 function closeNav() {
     document.getElementById("mySidebar").style.width = "0";
-    if (!lineVisibility === "hidden")
-    {
-        showLine();
-    }
 }
 
 const hideLine = () => {
