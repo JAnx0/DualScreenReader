@@ -21,7 +21,11 @@ const load = (webDiv, dest, url) => {
             }
 
             output += "</p>";
-
+            output= output.replace(/\n/g, "<br> ------------------------------ </br>"); // added paragraph highlighting
+            if(dest==='left')
+                localStorage.setItem("textLeft", fileContent); //storing texts locally
+            else
+                localStorage.setItem("textRight", fileContent);
             webDiv.innerHTML = output;
         }
     };
