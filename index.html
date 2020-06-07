@@ -80,26 +80,7 @@
                     <label id="file_name_left">
                         Keine Datei geladen...
 					</label>
-						<script>
-							function handleFileSelectL(evt)
-                            {
-                                const fileInput = document.getElementById("file-upload-left");
-                                const files = fileInput.files;
-                                document.getElementById('file_name_left').innerHTML = files[0].name;
-                                localStorage.setItem("textLeftName", files[0].name);
-                                const fileReader = new FileReader();
-
-                                fileReader.onload = function(progressEvent) {
-                                    var fileContent = fileReader.result;
-                                    fileContent= fileContent.replace(/\n/g, "<br> ------------------------------ </br>");
-                                    localStorage.setItem("textLeft", fileContent);
-                                    document.getElementById("leftOutput").innerHTML= fileContent;
-                                }
-
-                                fileReader.readAsText(files[0]);
-                                document.getElementById('file-upload-left').addEventListener('change', handleFileSelectL, false);
-							}
-						</script>
+                    <script type="text/javascript" src="js/fileLeft.js"></script>
                 </div>
             </div>
 
@@ -113,26 +94,7 @@
                     <label id="file_name_right">
 						Keine Datei geladen...
 					</label>
-					<script>
-							function handleFileSelectR(evt)
-                            {
-                                const fileInput = document.getElementById("file-upload-right");
-                                const files = fileInput.files;
-                                document.getElementById('file_name_right').innerHTML = files[0].name;
-                                localStorage.setItem("textRightName", files[0].name);
-                                const fileReader = new FileReader();
-
-                                fileReader.onload = function(progressEvent) {
-                                    var fileContent = fileReader.result;
-                                    fileContent= fileContent.replace(/\n/g, "<br> ------------------------------ </br>");
-                                    localStorage.setItem("textRight", fileContent);
-                                    document.getElementById("rightOutput").innerHTML= fileContent;
-                                }
-
-                                fileReader.readAsText(files[0]);
-                                document.getElementById('file-upload-right').addEventListener('change', handleFileSelectR, false);
-							}
-						</script>
+					<script type="text/javascript" src="js/fileRight.js"></script>
                 </div>
             </div>
         </div>
