@@ -1,22 +1,3 @@
-# belegit
-#### Beleg Internettechnologien I
+# Dual Screen Reader
 
-##### Gruppenmitglieder:
-
-* Lionel Burg (s78702)
-* Jannik Schmied (s78712)
-
-
-##### Umsetzung Anforderungen
-
-* 1 - ja
-* 2 - ja
-* 3 - ja
-* 4 - ja
-* 5 - ja 
-* 6 - ja
-* 6.1 - ja
-* 7 - ja
-* 8 - ja
-* 9 - ja
-
+Simple WebApp allowing to read and compare two documents at a time
